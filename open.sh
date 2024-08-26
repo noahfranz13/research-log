@@ -16,14 +16,13 @@ if [[ ! -d $year/$month ]]; then
     mkdir $year/$month
 fi
 
-# if the file exists print an error message and exit
+# if the file exists open it and exit
 if [[ -e $logfile ]]; then
-    echo "File already exists! Edit it directly!"
     emacs $logfile
     exit 1
 fi
 
-# make the file from the template
+# Otherwise, make the file from the template and open it
 cp template-log.txt $logfile
 sed -i "s/TODAYSDATE/$monthstr $day, $year Research Log/g" $logfile
 emacs $logfile
