@@ -19,9 +19,11 @@ fi
 # if the file exists print an error message and exit
 if [[ -e $logfile ]]; then
     echo "File already exists! Edit it directly!"
+    emacs $logfile
     exit 1
 fi
 
 # make the file from the template
 cp template-log.txt $logfile
 sed -i "s/TODAYSDATE/$monthstr $day, $year Research Log/g" $logfile
+emacs $logfile
