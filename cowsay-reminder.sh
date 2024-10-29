@@ -7,6 +7,11 @@ monthstr=$( date +%B )
 day=$( date +%d )
 file="$year/$month/$day.md"
 
+# we need to do this from the script directory, otherwise the git stuff wont't work
+SCRIPT_DIR=$(dirname $0)
+echo "Moving to $SCRIPT_DIR"
+cd $SCRIPT_DIR
+
 # start xcowsay
 xcowsay -t 0 --cow-size large --monitor 0 "write something in your research log" &
 
