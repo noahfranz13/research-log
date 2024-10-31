@@ -18,10 +18,16 @@ xcowsay -t 0 --cow-size large --monitor 0 "write something in your research log"
 # keep xcowsay up until the file is saved
 now=$(date +%s)
 mod_dt=3600 # modified in the last hour
+time_lim=7200
 while :
 do
     mod_date=$(date -r $file +%s)
-    if [ $mod_date -ge $((now - mod_dt)) ]
+    curr_time=$(date +%s)
+
+    # if the file has been modified then close the cow and push commits
+    # or if the current time is more than 2 hours after the script started we can also
+    # kill the cow and move on
+    if [ $mod_date -ge $((now - mod_dt)) ] || [ $curr_time -ge $(( now + 7200 )) ] 
     then
 	# close xcowsay
 	proc=$(pidof xcowsay)
