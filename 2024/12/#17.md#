@@ -7,9 +7,10 @@
 	1. root: Password protected user that has admin access everywhere
 	2. vetting-user: Password protected user that has access to the vetting collection and can make modifications to it. Only has read access to the transients collection.
 	3. user-guest: Only has read access to the transients collection. Not password protected.
+  * 
 
 ### Completed
-* 
+* Digging into OTTER DB security seems to be in a good state now!
 
 ### Notes for the future
 * 
