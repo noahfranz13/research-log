@@ -45,7 +45,7 @@
   }
   ```
   
-	  I think the one big remaining question I have here is do we need to have code that uses these models? Or do they just need to be present so astronomers can understand how the flux values were computed? Because the answer to this question changes how much standardization we give the `xray_model` keyword.
+I think the one big remaining question I have here is do we need to have code that uses these models? Or do they just need to be present so astronomers can understand how the flux values were computed? Because the answer to this question changes how much standardization we give the `xray_model` keyword.
 
 ### Any Leftover notes from yesterday
 * 
