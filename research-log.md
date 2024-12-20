@@ -1,3 +1,336 @@
+# August 26, 2024 Research Log
+### General Notes
+* Sent GRFP stuff to Tanmoy
+
+### Completed
+* Mostly just caught up on emails.
+* Emailed Sebastian about his Table 1 in his paper
+* Did the employment training
+
+### Notes for the future
+* 
+# August 27, 2024 Research Log
+### General Notes
+* I didn't have class today so I got to work on research all day!
+* I updated the `otterdb` repo so that it works with arangodb again
+* Updated the OTTER API to work with the arangodb backend
+* Found A LOT of mistakes in the dataset while working to get it into the website format
+
+### Completed
+* Reintegrating the dataset with arangodb (using docker so no one needs to install arangodb either!!)
+* Updated the OTTER API to work with the arangodb backend
+* Got nicegui app up and running with the arangodb backend
+
+### Notes for the future
+* Need to merge the branch I was working on for web-otter
+* Need to message Nick and tell him what updates I made to his code to integrate better with what I had already done
+# September 10, 2024 Research Log
+### General Notes
+* I haven't done this in a while, oops! I am still trying to build the habit...
+* Over the past ~week I did a lot on the web otter front end website including
+adding a search page and prettying up the home page with a sky plot.
+* Today I added a classification search mechanism to the search page
+
+### Completed
+* Classification search mechanism on otter-web frontend
+* Opened PRs for the minor planet checking in the SAGUARO vetting code
+
+### Notes for the future
+* Currently the classification search mechanism will grab anything with a
+so-called confidence > 0. This is because we haven't defined the confidence
+value in detail yet. Once we do, we should add a slider to this search page that
+allows others to select the confidence threshold they want!
+* Notes from the SAGUARO MP checker
+  * Do we really want the MP checker to automatically run when we click the vet button?
+  This seems to add a lot of time waiting.
+  * How should the results of the MP checker appear on the website for the target? Right
+  now I have it changing the classification to "Minor Planet / Asteroid".
+# October 02, 2024 Research Log
+### General Notes
+* ECLE Stuff
+  * I queried FIRST and NVSS for our population of 24 ECLEs. Some had FIRST data, none had NVSS data
+  * I also check RACS and didn't find it useful, everything seems non constraining for our case
+    * I suspect the radio emission from J0938 is just host contamination based on the RACS data and the long term lightcurve from FIRST. This is expected given it’s classification as an AGN!
+    * J1241 has no RACS data but the FIRST detections concern me a little. Although at later times we definitely see the radio emission decay. Remember that the discovery date for this is the publishing date though so this first radio detection could be the actual TDE occuring and what we see is some secondary late time flare. We have no way to verify this though unfortunately. Interesting!
+    * J0952 has RACS data that just looks like noise (although it’s very low SNR). The light curve appears quite variable!!
+* SAGUARO
+  * I finished making the minor planet checker button run an asynchronous job
+  * Discussed it with Griffin and it sounds like we want to use the date of the first photometric detection of the transient, NOT the discovery date. This is because discovery date can be arbitrarily defined and/or defined differently across different surveys
+  
+### Completed
+* Checking more radio surveys for ECLE data 
+
+### Notes for the future
+* Fix MPC button to use the first photometric detection instead of the "discovery date"
+# October 03, 2024 Research Log
+### General Notes
+* Interesting paper on a Blazar catalog and retrieval tool: https://arxiv.org/pdf/2410.01207
+* SAGUARO meeting where we went over the Kilonova vetting procedure: https://docs.google.com/document/d/1ywQV0T36jyaPrFhmlz5TcgAwjab0CCrFOC40e9_LZr4/edit?usp=sharing
+* 
+
+### Completed
+* Wrote more on the OTTER Paper!!!
+
+### Notes for the future
+* 
+
+### Any Leftover notes from yesterday
+* 
+# October 08, 2024 Research Log
+### General Notes
+* Studied a lot more :( 
+
+### Completed
+* 
+
+### Notes for the future
+* 
+
+### Any Leftover notes from yesterday
+* Yesterday I just studied for my ISM midterm by filling out the review sheet. That's why there isn't an entry
+# October 09, 2024 Research Log
+### General Notes
+* Spent ~1 hour in the morning studying a bit more, feeling pretty good about the exam tomorrow
+* Met with Jean Somalwar -- Check into x-ray's for ECLE's
+
+### Completed
+* 
+
+### Notes for the future
+* 
+
+### Any Leftover notes from yesterday
+* 
+# October 10, 2024 Research Log
+### General Notes
+* Spent an hour overviewing my study notes one last time
+* Added image cutouts to the transient subpages!!! Finally figured how to do this with some hacky javascript
+
+### Completed
+* 
+
+### Notes for the future
+* 
+
+### Any Leftover notes from yesterday
+* 
+# October 11, 2024 Research Log
+### General Notes
+* Added the optical photometry for Sw J1644+57
+* Added some Gaia photometry for Gaia Nuclear Transient Gaia ajq
+
+### Completed
+* 
+
+### Notes for the future
+* 
+
+### Any Leftover notes from yesterday
+* 
+# October 14, 2024 Research Log
+### General Notes
+* Caught up on Galaxies notes that I missed last monday
+* Picked paper to present for astroph in galaxies: A paper on the relationship between TDEs and dwarf galaxy AGN
+
+### Completed
+* 
+
+### Notes for the future
+* 
+
+### Any Leftover notes from yesterday
+* 
+# October 28, 2024 Research Log
+### General Notes
+* 
+
+### Completed
+* Messed with my emacs theme for probably way too long. But this will for sure make me happier looking at emacs now
+* Instrumentation Midterm Studying 
+	* started working on some of the problems for instrumentation studying since the midterm is this wednesday :(
+	* Class and reviewed notes for instrumentation
+	* Started to put together an equation sheet
+* Scheduled comittee meeting for Friday
+	* Zoom link, in case I can't find the email: https://arizona.zoom.us/j/9058357566
+
+### Notes for the future
+* Need to find a notecard to write equations on!
+
+### Any Leftover notes from yesterday
+* 
+# October 29, 2024 Research Log
+### General Notes
+* Instrumentation Midterm
+  * Skimmed through Ch 1 & 2 of "Measuring the Universe" and, more importantly, went through some of the problems.
+  * Went to Meredith's office hours, she said focus on SNR and Plate Scale calculations which is what I have been doing. I'm a little less concerned now, hopefully it goes fine!
+  * Went over some of the historical prelim questions with others
+  * Made the equation notecard
+* OTTER Bug Fixes
+  * Created an algorithm to better scale the x and y axes on the light curve plots on the inidividual transient pages
+  * Fixed some bugs where the API fails when searching for a discovery date and host. I just have those two getter methods return None now instead of crashing.
+* SciServer Meeting Notes
+  * Need to do Kubernetes with "Helm Chart" (???)
+  * Going to do some proof of concept work
+  * Next steps: Start a document on next steps and share with SciServer people
+
+### Completed
+* 
+
+### Notes for the future
+* 
+
+### Any Leftover notes from yesterday
+* 
+# October 30, 2024 Research Log
+### General Notes
+* I've been messing with Helm charts and Kubernetes all morning
+  * I've found that installing arangodb in the Hlem chart is non trivial :(
+  * Essentially you need to isntall the CRDs separately
+  ```
+  # install the CRDs
+  helm repo add arangodb https://arangodb.github.io/kube-arangodb
+  helm repo update
+  kubectl apply -f https://raw.githubusercontent.com/arangodb/kube-arangodb/master/manifests/arango-crd.yaml\
+  
+  # verify isntallation
+  kubectl get crds | grep arango
+  ```
+  * everything got deleted somehow and now I'm back to square one with literally no idea how I did some 
+    of the stuff from this morning
+
+### Completed
+* 
+
+### Notes for the future
+* 
+
+### Any Leftover notes from yesterday
+* 
+# October 31, 2024 Research Log
+### General Notes
+* Helm/Kubernetes
+  * `kubectl` says that arango is started but I still can't go to the url, maybe I have the wrong url?
+  * Still can't seem to get the otter website running in the kubernetes server even though the ports are mapped properly I think
+  * Got arangodb up and running in kubernetes but without installation
+  * To see it we needed to run the following commands to expose the minikube ports
+  ```
+  minikube tunnel # in one terminal
+  # then open another terminal and run
+  kubectl expose deployment otterdb-deployment --type=LoadBalancer --port=8529
+  kubectl expose deployment otterweb-deployment --type=LoadBalancer --port=80
+  # then run 
+  kubectl get svc
+  # and go to the EXTERNAL-IP:PORT
+ ```
+* Slides for Committee Meeting
+  * I've started putting together some update slides for my committee meeting tomorrow with just some general updates about everything I've done so far
+  * Finished these
+* 2nd astroph talk for Galaxies
+  * Found a paper on CLAGN and started reading it
+
+### Completed
+* Everything with helm/kubernetes is kinda working now! That means more progress than yesterday! Thank you chatGPT =)
+
+### Notes for the future
+* Finish reading the paper on CLAGN and make rough slides (can finish monday morning)
+* Don't forget to spend a couple hours on Astro education stuff
+
+### Any Leftover notes from yesterday
+* 
+# November 01, 2024 Research Log
+### General Notes
+* Voted this morning so I just got in at 9am!
+* But I am in the process of reading the paper on CLAGN for galaxies
+  * Finished reading this and making slides
+* Education Papers
+  * Spent some time reading one of the education papers
+  * Notes on iPad, some thoughts below
+  * This jupyter notebook we will create is a form of a "lecture tutorial" or a carefully designed activity the students do after a ~20 minute lecture from the professor
+  * Important to scaffold instruction, can use Question Complexity Rubric from French & Prather (2020)
+  * Should use small groups all working on the same lecture tutorial
+* Committee Meeting
+  * Talked through progress updates with Nathan, Dave, and Mathieu. Slides for that are here: https://docs.google.com/presentation/d/1C5kgkBANZP8yYJTonxrmdb6Qt71iWLiPplWfawIZrtA/edit?usp=sharing
+
+### Completed
+* Reading education papers that Ed sent
+* Reading and making slides for my astroph presentation in galaxies
+
+### Notes for the future
+* 
+
+### Any Leftover notes from yesterday
+* 
+# November 04, 2024 Research Log
+### General Notes
+* Started the morning catching up on email and a quick ~30min meeting with Dave, Ed, and Jacob about next steps
+* Tried to figure out helm and it still doesn't work
+* class
+* Meeting with collin
+  * His Projects
+    * AT2021sdu / AT2020zso (goal is to have paper draft by end of 2024)
+    * AT2018cqh (goal is to have paper draft by end of summer)
+    * ATCA Observations of AT2022lri
+  * Group / Collaborative projects
+    * Finish reducing and organizing 20B-377
+    * Keep submitting SBs as needed
+    * GRBs if Tanmoy needs us
+    * AT2019qiz and AT2022cmc modeling
+
+### Completed
+* 
+
+### Notes for the future
+* 
+
+### Any Leftover notes from yesterday
+* 
+# November 05, 2024 Research Log
+### General Notes
+* Most of this morning was spent preparing for observing tonight and tomorrow night!
+* I just got to the mountain and talked to Joe about some special stuff with the telescope tonight since it is the first time B&C Spec is being used since they re-aluminized the mirror. Here are some notes I jotted down from that:
+  1) Adjust Secondary Focus
+     a) Use the guide camera to focus
+     b) Can use either the switch (plus the sensitivity dial) underneath the focus number on the TCS. OR, use the white paddle by the monitors on the table
+  2) Filling Dewar when it is low on pressure
+     a) Get one of the tall skinny nitrogen gas containers
+     b) Connect the normal LN2 tank like normal
+     c) Turn on the normal LN2 tank
+     d) Connect the pressurized nitrogen gas tank to the normal LN2 tank
+     e) Check and make sure the release valve is fully closed, this means turn it all the way CCW until it is pretty easy to turn. This is the knob that is just underneath the two pressure sensors on the tall skinny tank
+     f) Turn the big knob on the very top of the nitrogen gas tank. Make sure the pressure dial on this tall skinny tank reads ~600-800 PSI
+     g) Open the release valve by turning it CW until the pressure on the normal LN2 tank reads 5-6 PSI
+     h) Once the tank is done filling, close the large knob on the top of the nitrogen gas tank, then fully open the pressure dial on the same tank, then close off the connection point on the LN2 tank, then turn off the LN2 tank, then disconnect the nitrogen gas tank from the LN2 tank, finally disconnect the LN2 tank from the deward
+  3) He said to be extra careful with the weather (humidity and wind) because the mirror needs to last another 3-4 years!
+* Filled Dewar at 2:30pm, should fill again around 6-7pm
+* While observing Collin and I helped get predicted flux densities based on the data we have reduced for GRB240825a. See plot below!
+
+
+### Completed
+* 
+
+### Notes for the future
+* 
+
+### Any Leftover notes from yesterday
+* 
+# November 07, 2024 Research Log
+### General Notes
+* Got down from the mountain early afternoon. Planning to catch up on ISM notes I missed today and maybe start looking into equipartition analysis a bit more.
+* Started the xdisk data backup on globus. I tried last night using rsync but that seems to have failed with such a large dataset. So this is a better solution.
+* Went through ISM notes I missed today.
+* I will need to do the equipartition analysis at a later date then!
+
+### Completed
+* 
+
+### Notes for the future
+* Need to do the equipartition analysis on the ECLE modelling results. Should talk to Collin about this.
+
+### Any Leftover notes from yesterday
+* I didn't do a good job of taking research notes yesterday while observing, here's a summary.
+* Mostly just observing, but got spectra of 16ezh and 19dsg! Will reduce ASAP and see if there are CLs
+* Spent a little bit fixing some of the radio SED modeling for the ECLEs. Mostly wrote some code to choose sideband or fullband points and refit everything. Also saved the chains so I can continue doing analysis elsewhere.
+* Caught up on missed class notes/work from tuesday and wednesday.
 # November 08, 2024 Research Notes
 ## General Notes
 * Most of the day at the internal symposium
@@ -658,311 +991,21 @@ Thoughts on all of this? I wanted to get opinions and try to solidify something 
 
 ### Any Leftover notes from yesterday
 * 
-# August 26, 2024 Research Log
+# December 20, 2024 Research Log
 ### General Notes
-* Sent GRFP stuff to Tanmoy
+* Talked to Collin about following up the newly identified TDE 2020ukj with VLA
+  * I checked VLASS and found 
+  e1 (pre-disruption): max w/in aperture = 0.402 ; RMS = 0.128
+  e2 (post-disruption, dt~13d): max w/in aperture = 0.299 ; RMS = 0.131
+  e3 (long post-disruption): max w/in aperture = 0.263 ; RMS = 0.109
+  * The e1 data point is an upperlimit even though the RMS is slightly under the max w/in aperture * 1/3, this is because there is some weird reduction artifact in the image. 
+  * We might write a DDT on this
+* Found all the ZTF public data for ECLEs 
+  * Trying to also query ATLAS but it is not working so great, just keeps hanging
+  * Also need to scrape papers for their data if it is public
 
-### Completed
-* Mostly just caught up on emails.
-* Emailed Sebastian about his Table 1 in his paper
-* Did the employment training
 
-### Notes for the future
-* 
-# August 27, 2024 Research Log
-### General Notes
-* I didn't have class today so I got to work on research all day!
-* I updated the `otterdb` repo so that it works with arangodb again
-* Updated the OTTER API to work with the arangodb backend
-* Found A LOT of mistakes in the dataset while working to get it into the website format
 
-### Completed
-* Reintegrating the dataset with arangodb (using docker so no one needs to install arangodb either!!)
-* Updated the OTTER API to work with the arangodb backend
-* Got nicegui app up and running with the arangodb backend
-
-### Notes for the future
-* Need to merge the branch I was working on for web-otter
-* Need to message Nick and tell him what updates I made to his code to integrate better with what I had already done
-# September 10, 2024 Research Log
-### General Notes
-* I haven't done this in a while, oops! I am still trying to build the habit...
-* Over the past ~week I did a lot on the web otter front end website including
-adding a search page and prettying up the home page with a sky plot.
-* Today I added a classification search mechanism to the search page
-
-### Completed
-* Classification search mechanism on otter-web frontend
-* Opened PRs for the minor planet checking in the SAGUARO vetting code
-
-### Notes for the future
-* Currently the classification search mechanism will grab anything with a
-so-called confidence > 0. This is because we haven't defined the confidence
-value in detail yet. Once we do, we should add a slider to this search page that
-allows others to select the confidence threshold they want!
-* Notes from the SAGUARO MP checker
-  * Do we really want the MP checker to automatically run when we click the vet button?
-  This seems to add a lot of time waiting.
-  * How should the results of the MP checker appear on the website for the target? Right
-  now I have it changing the classification to "Minor Planet / Asteroid".
-# October 02, 2024 Research Log
-### General Notes
-* ECLE Stuff
-  * I queried FIRST and NVSS for our population of 24 ECLEs. Some had FIRST data, none had NVSS data
-  * I also check RACS and didn't find it useful, everything seems non constraining for our case
-    * I suspect the radio emission from J0938 is just host contamination based on the RACS data and the long term lightcurve from FIRST. This is expected given it’s classification as an AGN!
-    * J1241 has no RACS data but the FIRST detections concern me a little. Although at later times we definitely see the radio emission decay. Remember that the discovery date for this is the publishing date though so this first radio detection could be the actual TDE occuring and what we see is some secondary late time flare. We have no way to verify this though unfortunately. Interesting!
-    * J0952 has RACS data that just looks like noise (although it’s very low SNR). The light curve appears quite variable!!
-* SAGUARO
-  * I finished making the minor planet checker button run an asynchronous job
-  * Discussed it with Griffin and it sounds like we want to use the date of the first photometric detection of the transient, NOT the discovery date. This is because discovery date can be arbitrarily defined and/or defined differently across different surveys
-  
-### Completed
-* Checking more radio surveys for ECLE data 
-
-### Notes for the future
-* Fix MPC button to use the first photometric detection instead of the "discovery date"
-# October 03, 2024 Research Log
-### General Notes
-* Interesting paper on a Blazar catalog and retrieval tool: https://arxiv.org/pdf/2410.01207
-* SAGUARO meeting where we went over the Kilonova vetting procedure: https://docs.google.com/document/d/1ywQV0T36jyaPrFhmlz5TcgAwjab0CCrFOC40e9_LZr4/edit?usp=sharing
-* 
-
-### Completed
-* Wrote more on the OTTER Paper!!!
-
-### Notes for the future
-* 
-
-### Any Leftover notes from yesterday
-* 
-# October 08, 2024 Research Log
-### General Notes
-* Studied a lot more :( 
-
-### Completed
-* 
-
-### Notes for the future
-* 
-
-### Any Leftover notes from yesterday
-* Yesterday I just studied for my ISM midterm by filling out the review sheet. That's why there isn't an entry
-# October 09, 2024 Research Log
-### General Notes
-* Spent ~1 hour in the morning studying a bit more, feeling pretty good about the exam tomorrow
-* Met with Jean Somalwar -- Check into x-ray's for ECLE's
-
-### Completed
-* 
-
-### Notes for the future
-* 
-
-### Any Leftover notes from yesterday
-* 
-# October 10, 2024 Research Log
-### General Notes
-* Spent an hour overviewing my study notes one last time
-* Added image cutouts to the transient subpages!!! Finally figured how to do this with some hacky javascript
-
-### Completed
-* 
-
-### Notes for the future
-* 
-
-### Any Leftover notes from yesterday
-* 
-# October 11, 2024 Research Log
-### General Notes
-* Added the optical photometry for Sw J1644+57
-* Added some Gaia photometry for Gaia Nuclear Transient Gaia ajq
-
-### Completed
-* 
-
-### Notes for the future
-* 
-
-### Any Leftover notes from yesterday
-* 
-# October 14, 2024 Research Log
-### General Notes
-* Caught up on Galaxies notes that I missed last monday
-* Picked paper to present for astroph in galaxies: A paper on the relationship between TDEs and dwarf galaxy AGN
-
-### Completed
-* 
-
-### Notes for the future
-* 
-
-### Any Leftover notes from yesterday
-* 
-# October 28, 2024 Research Log
-### General Notes
-* 
-
-### Completed
-* Messed with my emacs theme for probably way too long. But this will for sure make me happier looking at emacs now
-* Instrumentation Midterm Studying 
-	* started working on some of the problems for instrumentation studying since the midterm is this wednesday :(
-	* Class and reviewed notes for instrumentation
-	* Started to put together an equation sheet
-* Scheduled comittee meeting for Friday
-	* Zoom link, in case I can't find the email: https://arizona.zoom.us/j/9058357566
-
-### Notes for the future
-* Need to find a notecard to write equations on!
-
-### Any Leftover notes from yesterday
-* 
-# October 29, 2024 Research Log
-### General Notes
-* Instrumentation Midterm
-  * Skimmed through Ch 1 & 2 of "Measuring the Universe" and, more importantly, went through some of the problems.
-  * Went to Meredith's office hours, she said focus on SNR and Plate Scale calculations which is what I have been doing. I'm a little less concerned now, hopefully it goes fine!
-  * Went over some of the historical prelim questions with others
-  * Made the equation notecard
-* OTTER Bug Fixes
-  * Created an algorithm to better scale the x and y axes on the light curve plots on the inidividual transient pages
-  * Fixed some bugs where the API fails when searching for a discovery date and host. I just have those two getter methods return None now instead of crashing.
-* SciServer Meeting Notes
-  * Need to do Kubernetes with "Helm Chart" (???)
-  * Going to do some proof of concept work
-  * Next steps: Start a document on next steps and share with SciServer people
-
-### Completed
-* 
-
-### Notes for the future
-* 
-
-### Any Leftover notes from yesterday
-* 
-# October 30, 2024 Research Log
-### General Notes
-* I've been messing with Helm charts and Kubernetes all morning
-  * I've found that installing arangodb in the Hlem chart is non trivial :(
-  * Essentially you need to isntall the CRDs separately
-  ```
-  # install the CRDs
-  helm repo add arangodb https://arangodb.github.io/kube-arangodb
-  helm repo update
-  kubectl apply -f https://raw.githubusercontent.com/arangodb/kube-arangodb/master/manifests/arango-crd.yaml\
-  
-  # verify isntallation
-  kubectl get crds | grep arango
-  ```
-  * everything got deleted somehow and now I'm back to square one with literally no idea how I did some 
-    of the stuff from this morning
-
-### Completed
-* 
-
-### Notes for the future
-* 
-
-### Any Leftover notes from yesterday
-* 
-# October 31, 2024 Research Log
-### General Notes
-* Helm/Kubernetes
-  * `kubectl` says that arango is started but I still can't go to the url, maybe I have the wrong url?
-  * Still can't seem to get the otter website running in the kubernetes server even though the ports are mapped properly I think
-  * Got arangodb up and running in kubernetes but without installation
-  * To see it we needed to run the following commands to expose the minikube ports
-  ```
-  minikube tunnel # in one terminal
-  # then open another terminal and run
-  kubectl expose deployment otterdb-deployment --type=LoadBalancer --port=8529
-  kubectl expose deployment otterweb-deployment --type=LoadBalancer --port=80
-  # then run 
-  kubectl get svc
-  # and go to the EXTERNAL-IP:PORT
- ```
-* Slides for Committee Meeting
-  * I've started putting together some update slides for my committee meeting tomorrow with just some general updates about everything I've done so far
-  * Finished these
-* 2nd astroph talk for Galaxies
-  * Found a paper on CLAGN and started reading it
-
-### Completed
-* Everything with helm/kubernetes is kinda working now! That means more progress than yesterday! Thank you chatGPT =)
-
-### Notes for the future
-* Finish reading the paper on CLAGN and make rough slides (can finish monday morning)
-* Don't forget to spend a couple hours on Astro education stuff
-
-### Any Leftover notes from yesterday
-* 
-# November 01, 2024 Research Log
-### General Notes
-* Voted this morning so I just got in at 9am!
-* But I am in the process of reading the paper on CLAGN for galaxies
-  * Finished reading this and making slides
-* Education Papers
-  * Spent some time reading one of the education papers
-  * Notes on iPad, some thoughts below
-  * This jupyter notebook we will create is a form of a "lecture tutorial" or a carefully designed activity the students do after a ~20 minute lecture from the professor
-  * Important to scaffold instruction, can use Question Complexity Rubric from French & Prather (2020)
-  * Should use small groups all working on the same lecture tutorial
-* Committee Meeting
-  * Talked through progress updates with Nathan, Dave, and Mathieu. Slides for that are here: https://docs.google.com/presentation/d/1C5kgkBANZP8yYJTonxrmdb6Qt71iWLiPplWfawIZrtA/edit?usp=sharing
-
-### Completed
-* Reading education papers that Ed sent
-* Reading and making slides for my astroph presentation in galaxies
-
-### Notes for the future
-* 
-
-### Any Leftover notes from yesterday
-* 
-# November 04, 2024 Research Log
-### General Notes
-* Started the morning catching up on email and a quick ~30min meeting with Dave, Ed, and Jacob about next steps
-* Tried to figure out helm and it still doesn't work
-* class
-* Meeting with collin
-  * His Projects
-    * AT2021sdu / AT2020zso (goal is to have paper draft by end of 2024)
-    * AT2018cqh (goal is to have paper draft by end of summer)
-    * ATCA Observations of AT2022lri
-  * Group / Collaborative projects
-    * Finish reducing and organizing 20B-377
-    * Keep submitting SBs as needed
-    * GRBs if Tanmoy needs us
-    * AT2019qiz and AT2022cmc modeling
-
-### Completed
-* 
-
-### Notes for the future
-* 
-
-### Any Leftover notes from yesterday
-* 
-# November 05, 2024 Research Log
-### General Notes
-* Most of this morning was spent preparing for observing tonight and tomorrow night!
-* I just got to the mountain and talked to Joe about some special stuff with the telescope tonight since it is the first time B&C Spec is being used since they re-aluminized the mirror. Here are some notes I jotted down from that:
-  1) Adjust Secondary Focus
-     a) Use the guide camera to focus
-     b) Can use either the switch (plus the sensitivity dial) underneath the focus number on the TCS. OR, use the white paddle by the monitors on the table
-  2) Filling Dewar when it is low on pressure
-     a) Get one of the tall skinny nitrogen gas containers
-     b) Connect the normal LN2 tank like normal
-     c) Turn on the normal LN2 tank
-     d) Connect the pressurized nitrogen gas tank to the normal LN2 tank
-     e) Check and make sure the release valve is fully closed, this means turn it all the way CCW until it is pretty easy to turn. This is the knob that is just underneath the two pressure sensors on the tall skinny tank
-     f) Turn the big knob on the very top of the nitrogen gas tank. Make sure the pressure dial on this tall skinny tank reads ~600-800 PSI
-     g) Open the release valve by turning it CW until the pressure on the normal LN2 tank reads 5-6 PSI
-     h) Once the tank is done filling, close the large knob on the top of the nitrogen gas tank, then fully open the pressure dial on the same tank, then close off the connection point on the LN2 tank, then turn off the LN2 tank, then disconnect the nitrogen gas tank from the LN2 tank, finally disconnect the LN2 tank from the deward
-  3) He said to be extra careful with the weather (humidity and wind) because the mirror needs to last another 3-4 years!
-* Filled Dewar at 2:30pm, should fill again around 6-7pm
-* While observing Collin and I helped get predicted flux densities based on the data we have reduced for GRB240825a. See plot below!
 
 
 ### Completed
@@ -973,21 +1016,3 @@ allows others to select the confidence threshold they want!
 
 ### Any Leftover notes from yesterday
 * 
-# November 07, 2024 Research Log
-### General Notes
-* Got down from the mountain early afternoon. Planning to catch up on ISM notes I missed today and maybe start looking into equipartition analysis a bit more.
-* Started the xdisk data backup on globus. I tried last night using rsync but that seems to have failed with such a large dataset. So this is a better solution.
-* Went through ISM notes I missed today.
-* I will need to do the equipartition analysis at a later date then!
-
-### Completed
-* 
-
-### Notes for the future
-* Need to do the equipartition analysis on the ECLE modelling results. Should talk to Collin about this.
-
-### Any Leftover notes from yesterday
-* I didn't do a good job of taking research notes yesterday while observing, here's a summary.
-* Mostly just observing, but got spectra of 16ezh and 19dsg! Will reduce ASAP and see if there are CLs
-* Spent a little bit fixing some of the radio SED modeling for the ECLEs. Mostly wrote some code to choose sideband or fullband points and refit everything. Also saved the chains so I can continue doing analysis elsewhere.
-* Caught up on missed class notes/work from tuesday and wednesday.
