@@ -1,0 +1,23 @@
+#!/bin/bash
+
+Help()
+{
+    echo "Search for terms in the research log."
+    echo
+    echo "Syntax: search -s 'term to search for'"
+    echo
+    echo "Options:"
+    echo "-s | --for | --search-for    The term to search for"
+    echo "-h | --help                  Display this help message"
+    echo
+}
+
+while [ $# -gt 0 ]; do
+  case "$1" in
+    -s|--for|--search-for) search="$2"; shift 2 ;;
+    -h|--help) Help; exit ;;
+    *) echo "Invalid option: $1" >&2; exit 1 ;;
+  esac
+done
+
+grep -Tnir --include=*.md --color $search
