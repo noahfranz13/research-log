@@ -1,0 +1,40 @@
+# This is a basic workflow to help you get started with Actions
+
+name: generate-research-log
+
+# Controls when the workflow will run
+on:
+  push:
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: '0'
+      
+      - name: Build README
+        run: ./combine.sh
+      - name: Commit files
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "action@github.com"
+          git add .
+          if git diff-index --quiet HEAD --; then
+            echo "changes_to_push=false" >> $GITHUB_ENV
+          else
+            git commit -m "Updated TOC"
+            echo "changes_to_push=true" >> $GITHUB_ENV
+          fi
+      - name: Push changes # push the output folder to your repo
+        if: ${{ env.changes_to_push == 'true' }}
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          force: true
