@@ -1,3 +1,358 @@
+# November 20, 2024 Research Log
+### General Notes
+* Been reading Corinna's GRB 220101A paper
+* Wrote a first draft of my personal statement for the astrobites application
+* TROVE meeting
+  * Good conversation about the structure of both the API endpoints and database backend!
+  * Manisha took notes in the TROVE meeting notes document
+
+
+### Completed
+* 
+
+### Notes for the future
+* 
+
+### Any Leftover notes from yesterday
+* 
+# November 21, 2024 Research Log
+### General Notes
+* Finishing reading and commenting on Corinna's GRB paper and added comments to it!
+* Started writing my sample astrobite, I decided to do it on Megan Newsome's 22upj ECLE paper!
+
+### Completed
+* 
+
+### Notes for the future
+* 
+
+### Any Leftover notes from yesterday
+* 
+# November 22, 2024 Research Log
+### General Notes
+* Editing the sample astrobite right now to try to make it tell a more cohesive story
+  * Sent it around to others to read
+* Started working on the helm chart
+  * Still working on these updates, stuff really just doesn't seem to want to work :(
+  * I think I figured it out, just need to test it. I ended up using the video here https://discuss.kubernetes.io/t/why-can-i-not-connect-to-my-service-even-though-i-have-an-endpoint/16491, super useful! May need to watch some more of those videos. 
+
+### Completed
+* 
+
+### Notes for the future
+* 
+
+### Any Leftover notes from yesterday
+* 
+# November 25, 2024 Research Log
+### General Notes
+* Incorporated edits from Brock and Anni on my astrobites application statements first thing this morning
+* Started working on ISM homework 3
+
+### Completed
+* 
+
+### Notes for the future
+* 
+
+### Any Leftover notes from yesterday
+* 
+# November 26, 2024 Research Log
+### General Notes
+* Jeniveve, Collin, Vikram, and Brock gave me tons of comments on my statements so I'm addressing them this morning!
+  * Finished this after about 3 hours, this application is taking a lot of time but I think my statements are good!
+
+### Completed
+* 
+
+### Notes for the future
+* 
+
+### Any Leftover notes from yesterday
+* 
+# November 27, 2024 Research Log
+### General Notes
+* 
+
+### Completed
+* Astrobites application is submitted!
+* Finished ISM hw 3
+
+### Notes for the future
+* 
+
+### Any Leftover notes from yesterday
+* 
+# December 02, 2024 Research Log
+### General Notes
+* Fixed TNS slack bot this morning
+* OTTER
+  * Updated the helm chart based on the SciServer people's comments
+  * Update some of the OTTER readmes to reflect changes that I've made in the past few months
+  * Now been working on a better upload method for the otter API that uses a vetting collection instead of just some local directory. --> I got this done throughout the day! And am now working on adding it to the otter-web interface to make that faster and more scalable
+
+### Completed
+* 
+
+### Notes for the future
+* I NEED to do my big boom presentation tomorrow!
+* Rewrote all of the vetting code but it needs to be better tested!
+
+### Any Leftover notes from yesterday
+* 
+# December 03, 2024 Research Log
+### General Notes
+* Need to put together my Big Boom presentation today! I think it will help me figure out how to outline the further investigation into the ECLE radio properties!
+  * Finished up the history and current context of our ECLE analysis
+  * Had some meetings but just now getting back to making my plots prettier for the slides tomorrow!
+  * Fixed the FIRST query so I queried for 5" instead of 5'. This turned up only one detection instead of all of the offset ones I had from before.
+  * Fixed the radio lightcurve plots for ECLEs, need to look into a few that have two VLASS images at a single point
+
+### Completed
+* 
+
+### Notes for the future
+* Some notes on the cleaning choices I made to get rid of duplicated images from VLASS. First, after talking to Collin, we think this occurs because the 1 arcmin region surrounding the TDE is partially in the region of overlapping fields from the VLASS survey strategy tesselating. We found this by opening all of the images in ds9, locking on the WCS, and then the square images are centered on the correct location and the rectangular ones are not.
+* I am deleting all of the non-square quick look VLASS images to address this for the following events: AT2018bcb, 
+* For AT2022fpx, VLASS Epoch 2.1 had both a QL and SE image, I am removing the QL image because the SE image is higher quality/better reduction
+* For SDSSJ1055, I did the same as for AT2022fpx
+* For SDSSJ1715, I did the same as for AT2022fpx
+
+### Any Leftover notes from yesterday
+* 
+# December 04, 2024 Research Log
+### General Notes
+* Finished up some plots for my Big Boom talk
+
+### Completed
+* 
+
+### Notes for the future
+* 
+
+### Any Leftover notes from yesterday
+* 
+# December 06, 2024 Research Log
+### General Notes
+* Fixing some saguaro stuff to make it work better
+* Been studying for ISM
+
+### Completed
+* 
+
+### Notes for the future
+* 
+
+### Any Leftover notes from yesterday
+* 
+# December 07, 2024 Research Log
+### General Notes
+* Studying for final on a saturday afternoon :(
+
+### Completed
+* 
+
+### Notes for the future
+* 
+
+### Any Leftover notes from yesterday
+* 
+# December 09, 2024 Research Log
+### General Notes
+* Went over galaxies homeworks that I got wrong to study for that final
+* Spent two hours reviewing ISM notes, I think I know most of it! Definitely need to review derivation of stromgren sphere for HII regions though.
+
+### Completed
+* 
+
+### Notes for the future
+* 
+
+### Any Leftover notes from yesterday
+* 
+# December 10, 2024 Research Log
+### General Notes
+* Studying for galaxies this morning, have ISM final soon
+* ISM exam went well I think!
+* Did a little investigating into finding host galaxies with BLAST 
+  * This is worthwhile for OTTER, SAGUARO, and TROVE!
+  * I'm starting by writing the code for SAGUARO but it should be similar for the others too
+
+### Completed
+* 
+
+### Notes for the future
+* 
+
+### Any Leftover notes from yesterday
+* 
+# December 11, 2024 Research Log
+### General Notes
+* I rewrote the OTTER host association code to query BLAST instead of the astro-ghost database. This is because BLAST uses the same algorithm but makes the query easier and faster.
+* Been working on fixing the OTTER upload and vetting stuff
+  * Finished fixing and testing this!
+
+### Completed
+* 
+
+### Notes for the future
+* 
+
+### Any Leftover notes from yesterday
+* 
+# December 12, 2024 Research Log
+### General Notes
+* Today's gotta be about the instrumentation project
+  * Got the background noise and now working on dark noise and read noise
+* Also met with Connor this morning, he was great to talk to!
+
+### Completed
+* 
+
+### Notes for the future
+* 
+
+### Any Leftover notes from yesterday
+* 
+# December 13, 2024 Research Log
+### General Notes
+* Working more on reducing the data for Instrumentation project
+* Started making plots and tables and writing
+
+### Completed
+* 
+
+### Notes for the future
+* 
+
+### Any Leftover notes from yesterday
+* 
+# December 16, 2024 Research Log
+### General Notes
+* Finished classes for this semester! Everything is submitted!
+* Implemented pydantic validator in otter. This will make the dataset more standard, easier to use, and make adding new data easier!
+
+### Completed
+* 
+
+### Notes for the future
+* 
+
+### Any Leftover notes from yesterday
+* 
+# December 17, 2024 Research Log
+### General Notes
+* Space Drafts #102 advertisements: Posted on the Bluesky and sent the all steward email (scary!!)
+* Completed my department course evals
+* OTTER Stuff
+  * Got the otter web app up and running publicly using the NiceGUI on_air feature!
+  * Improved the database security with 3 users now. Unfortunately, everytime I restart the otter database I will have to redefine all of these users
+	1. root: Password protected user that has admin access everywhere
+	2. vetting-user: Password protected user that has access to the vetting collection and can make modifications to it. Only has read access to the transients collection.
+	3. user-guest: Only has read access to the transients collection. Not password protected.
+  * Read up on X-ray data reduction to try to get a better idea of the stuff Raf was requesting to be stored in OTTER. I skimmed Ch. 4 and 5 in "Handbook of X-ray Astronomy" and read some of the sections in each of those chapters in more details.
+	* It sounds like xspec is the commonly used NASA software, all of their models are defined here: https://heasarc.gsfc.nasa.gov/xanadu/xspec/manual/Models.html
+	* The spectral models can have multiple components that are either added or multiplied together. 
+	* Integrating under the spectral models in counts/s/cm^2/energy vs. energy space gives an energy/s/cm^2 (or erg/s/cm^2), this is why we need to assume the spectral model of the source!
+	* These spectral models are only accounting for unabsorbed flux, just like at other wavelengths there can be flux absorbed by Hydrogen between us and the source. For example, Aprajita reports both an unabsorbed and absorbed flux in her paper on ASASSN-15oi. This "absorbed flux" can be treated like we treat optical extinction at UVOIR wavelengths.
+
+### Completed
+* Digging into OTTER DB security seems to be in a good state now!
+
+### Notes for the future
+* Sent this message to Kate and Sebastian summarizing my thoughts
+
+Okay I've done a lot of digging into x-ray models and rereading Aprajita's paper on ASASSN-15oi and Evan Ridley's paper on AT2017bcc and reading parts of a book on X-ray astronomy because I realized I just had a fundamental lack of understanding about how the data is taken and reduced. Both of these papers use a multicomponent powerlaw and blackbody spectral fit.
+I think the biggest thing I've learned is that since these x-ray models can have multiple components there can literally be infinite possibilities for the model used. This means that I don't think that there is necessarily any way for us to standardize between models without re-reducing the data completely from scratch. Since this is the case, I don't think we need too much standardization in the xray_model keyword, instead we just need details present so astronomers who care about the nitty gritty details can go back and dig up the details. I think this means that we should define the xray_model keyword as follows:
+photometry : {
+	  [
+		obs_type: xray,
+		raw: [...],
+		raw_err: [...],
+		raw_unit: "ct/s"
+		err_details: [...],
+        date: [...],
+		value: [...],
+		value_err: [...],
+		value_unit: "erg/s/cm^2",
+		xray_model: [
+			{
+				model_name: "", # preferably the xspec model name
+				param_names: [],
+				param_values: [],
+                param_value_upper_err: [],
+                param_value_lower_err: [],
+				param_descriptions: [],
+				model_url: "" # An optional model url 
+			}, ...
+		]
+		
+	  ]
+  } 
+Where there is one xray_model per date/observation time since these models can be time dependent. The model name is completely arbitrary, in Aprajita's case it could be something like "pow+blackbody" whereas in the case of Evans it could be "powerlaw+bb". It is essentially just there to give people an initial hint at the type of model. The param_*  keywords will differ depending on the model but will always be the same length as eachother. In the case of a powerlaw + blackbody model the param_names would be something like [Gamma_X, F_PL, kT_BB, F_BB, R_BB] , using the parameter names from Aprajita's paper. If instead a paper only uses a power law model, the param_names would be [Gamma_X, F]. Because of the param_descriptions keyword, these could be different depending on the paper. I've made the error upper and lower limits since it seems like these fits are almost always Bayesian. Finally, the model_url  should either be a doi link or a url to e.g. the xspec docs on the model (or whatever other software).
+Okay sorry this was a massive message but it kinda sums up my thoughts. I know we have been trying to avoid this type of parameter where it's extremely flexible and arbitrary but it's the best solution I've come up with to provide the necessary information about the essentially infinitely possible xray models. This definitely will not be easy to programmatically apply to data but will at least provide necessary information to people who query OTTER.
+Thoughts on all of this? I wanted to get opinions and try to solidify something before taking the time to start using this schema.
+
+### Any Leftover notes from yesterday
+* 
+# December 19, 2024 Research Log
+### General Notes
+* Started digging into how to actually format the X-ray data for OTTER
+  * Organized Aprajita's X-ray data into the new schema that includes an xray_model keyword
+  * Sent an email to Raf checking in about if this is a good schema plan to use
+* Modelled the ECLE radio data as a single power law since all of them are decaying anyways.
+  * All of them have a p consistent with 2-4 which is promising!
+  * I think this means that the B5 synchrotron model from 5/2 to a break at (1-p)/2 is valid.
+
+### Completed
+* 
+
+### Notes for the future
+* 
+
+### Any Leftover notes from yesterday
+* 
+# December 20, 2024 Research Log
+### General Notes
+* Talked to Collin about following up the newly identified TDE 2020ukj with VLA
+  * I checked VLASS and found 
+  e1 (pre-disruption): max w/in aperture = 0.402 ; RMS = 0.128
+  e2 (post-disruption, dt~13d): max w/in aperture = 0.299 ; RMS = 0.131
+  e3 (long post-disruption): max w/in aperture = 0.263 ; RMS = 0.109
+  * The e1 data point is an upperlimit even though the RMS is slightly under the max w/in aperture * 1/3, this is because there is some weird reduction artifact in the image. 
+  * We might write a DDT on this
+* Found all the ZTF public data for ECLEs 
+  * Trying to also query ATLAS but it is not working so great, just keeps hanging
+  * Also need to scrape papers for their data if it is public
+
+
+
+
+
+### Completed
+* 
+
+### Notes for the future
+* 
+
+### Any Leftover notes from yesterday
+* 
+# January 07, 2025 Research Log
+### General Notes
+* Reformatted the AT2017bcc data from Ridley+2023
+  * This took a while because of silly little things that I forgot I needed to worry about over the holiday. Hopefully this will save me time when working with Aprajita's and Muryel's datasets
+	* Always make sure I re-upload to the Arango database after running the pipeline! This is purposefully not done automatically...
+	* Make sure all X-ray filters have a minimum and maximum wavelength stored in the filter_alias keyword
+* Met with Ed and Jacob to solidify a plan and goals for the semester for the astro education independent study
+
+### Completed
+* 
+
+### Notes for the future
+* 
+
+### Any Leftover notes from yesterday
+* 
 # August 26, 2024 Research Log
 ### General Notes
 * Sent GRFP stuff to Tanmoy
@@ -674,345 +1029,6 @@ which runs it on all of the json files in the `mosfit_input` directory, writes b
 
 ### Notes for the future
 * Work on the astrobites statements!
-
-### Any Leftover notes from yesterday
-* 
-# November 20, 2024 Research Log
-### General Notes
-* Been reading Corinna's GRB 220101A paper
-* Wrote a first draft of my personal statement for the astrobites application
-* TROVE meeting
-  * Good conversation about the structure of both the API endpoints and database backend!
-  * Manisha took notes in the TROVE meeting notes document
-
-
-### Completed
-* 
-
-### Notes for the future
-* 
-
-### Any Leftover notes from yesterday
-* 
-# November 21, 2024 Research Log
-### General Notes
-* Finishing reading and commenting on Corinna's GRB paper and added comments to it!
-* Started writing my sample astrobite, I decided to do it on Megan Newsome's 22upj ECLE paper!
-
-### Completed
-* 
-
-### Notes for the future
-* 
-
-### Any Leftover notes from yesterday
-* 
-# November 22, 2024 Research Log
-### General Notes
-* Editing the sample astrobite right now to try to make it tell a more cohesive story
-  * Sent it around to others to read
-* Started working on the helm chart
-  * Still working on these updates, stuff really just doesn't seem to want to work :(
-  * I think I figured it out, just need to test it. I ended up using the video here https://discuss.kubernetes.io/t/why-can-i-not-connect-to-my-service-even-though-i-have-an-endpoint/16491, super useful! May need to watch some more of those videos. 
-
-### Completed
-* 
-
-### Notes for the future
-* 
-
-### Any Leftover notes from yesterday
-* 
-# November 25, 2024 Research Log
-### General Notes
-* Incorporated edits from Brock and Anni on my astrobites application statements first thing this morning
-* Started working on ISM homework 3
-
-### Completed
-* 
-
-### Notes for the future
-* 
-
-### Any Leftover notes from yesterday
-* 
-# November 26, 2024 Research Log
-### General Notes
-* Jeniveve, Collin, Vikram, and Brock gave me tons of comments on my statements so I'm addressing them this morning!
-  * Finished this after about 3 hours, this application is taking a lot of time but I think my statements are good!
-
-### Completed
-* 
-
-### Notes for the future
-* 
-
-### Any Leftover notes from yesterday
-* 
-# November 27, 2024 Research Log
-### General Notes
-* 
-
-### Completed
-* Astrobites application is submitted!
-* Finished ISM hw 3
-
-### Notes for the future
-* 
-
-### Any Leftover notes from yesterday
-* 
-# December 02, 2024 Research Log
-### General Notes
-* Fixed TNS slack bot this morning
-* OTTER
-  * Updated the helm chart based on the SciServer people's comments
-  * Update some of the OTTER readmes to reflect changes that I've made in the past few months
-  * Now been working on a better upload method for the otter API that uses a vetting collection instead of just some local directory. --> I got this done throughout the day! And am now working on adding it to the otter-web interface to make that faster and more scalable
-
-### Completed
-* 
-
-### Notes for the future
-* I NEED to do my big boom presentation tomorrow!
-* Rewrote all of the vetting code but it needs to be better tested!
-
-### Any Leftover notes from yesterday
-* 
-# December 03, 2024 Research Log
-### General Notes
-* Need to put together my Big Boom presentation today! I think it will help me figure out how to outline the further investigation into the ECLE radio properties!
-  * Finished up the history and current context of our ECLE analysis
-  * Had some meetings but just now getting back to making my plots prettier for the slides tomorrow!
-  * Fixed the FIRST query so I queried for 5" instead of 5'. This turned up only one detection instead of all of the offset ones I had from before.
-  * Fixed the radio lightcurve plots for ECLEs, need to look into a few that have two VLASS images at a single point
-
-### Completed
-* 
-
-### Notes for the future
-* Some notes on the cleaning choices I made to get rid of duplicated images from VLASS. First, after talking to Collin, we think this occurs because the 1 arcmin region surrounding the TDE is partially in the region of overlapping fields from the VLASS survey strategy tesselating. We found this by opening all of the images in ds9, locking on the WCS, and then the square images are centered on the correct location and the rectangular ones are not.
-* I am deleting all of the non-square quick look VLASS images to address this for the following events: AT2018bcb, 
-* For AT2022fpx, VLASS Epoch 2.1 had both a QL and SE image, I am removing the QL image because the SE image is higher quality/better reduction
-* For SDSSJ1055, I did the same as for AT2022fpx
-* For SDSSJ1715, I did the same as for AT2022fpx
-
-### Any Leftover notes from yesterday
-* 
-# December 04, 2024 Research Log
-### General Notes
-* Finished up some plots for my Big Boom talk
-
-### Completed
-* 
-
-### Notes for the future
-* 
-
-### Any Leftover notes from yesterday
-* 
-# December 06, 2024 Research Log
-### General Notes
-* Fixing some saguaro stuff to make it work better
-* Been studying for ISM
-
-### Completed
-* 
-
-### Notes for the future
-* 
-
-### Any Leftover notes from yesterday
-* 
-# December 07, 2024 Research Log
-### General Notes
-* Studying for final on a saturday afternoon :(
-
-### Completed
-* 
-
-### Notes for the future
-* 
-
-### Any Leftover notes from yesterday
-* 
-# December 09, 2024 Research Log
-### General Notes
-* Went over galaxies homeworks that I got wrong to study for that final
-* Spent two hours reviewing ISM notes, I think I know most of it! Definitely need to review derivation of stromgren sphere for HII regions though.
-
-### Completed
-* 
-
-### Notes for the future
-* 
-
-### Any Leftover notes from yesterday
-* 
-# December 10, 2024 Research Log
-### General Notes
-* Studying for galaxies this morning, have ISM final soon
-* ISM exam went well I think!
-* Did a little investigating into finding host galaxies with BLAST 
-  * This is worthwhile for OTTER, SAGUARO, and TROVE!
-  * I'm starting by writing the code for SAGUARO but it should be similar for the others too
-
-### Completed
-* 
-
-### Notes for the future
-* 
-
-### Any Leftover notes from yesterday
-* 
-# December 11, 2024 Research Log
-### General Notes
-* I rewrote the OTTER host association code to query BLAST instead of the astro-ghost database. This is because BLAST uses the same algorithm but makes the query easier and faster.
-* Been working on fixing the OTTER upload and vetting stuff
-  * Finished fixing and testing this!
-
-### Completed
-* 
-
-### Notes for the future
-* 
-
-### Any Leftover notes from yesterday
-* 
-# December 12, 2024 Research Log
-### General Notes
-* Today's gotta be about the instrumentation project
-  * Got the background noise and now working on dark noise and read noise
-* Also met with Connor this morning, he was great to talk to!
-
-### Completed
-* 
-
-### Notes for the future
-* 
-
-### Any Leftover notes from yesterday
-* 
-# December 13, 2024 Research Log
-### General Notes
-* Working more on reducing the data for Instrumentation project
-* Started making plots and tables and writing
-
-### Completed
-* 
-
-### Notes for the future
-* 
-
-### Any Leftover notes from yesterday
-* 
-# December 16, 2024 Research Log
-### General Notes
-* Finished classes for this semester! Everything is submitted!
-* Implemented pydantic validator in otter. This will make the dataset more standard, easier to use, and make adding new data easier!
-
-### Completed
-* 
-
-### Notes for the future
-* 
-
-### Any Leftover notes from yesterday
-* 
-# December 17, 2024 Research Log
-### General Notes
-* Space Drafts #102 advertisements: Posted on the Bluesky and sent the all steward email (scary!!)
-* Completed my department course evals
-* OTTER Stuff
-  * Got the otter web app up and running publicly using the NiceGUI on_air feature!
-  * Improved the database security with 3 users now. Unfortunately, everytime I restart the otter database I will have to redefine all of these users
-	1. root: Password protected user that has admin access everywhere
-	2. vetting-user: Password protected user that has access to the vetting collection and can make modifications to it. Only has read access to the transients collection.
-	3. user-guest: Only has read access to the transients collection. Not password protected.
-  * Read up on X-ray data reduction to try to get a better idea of the stuff Raf was requesting to be stored in OTTER. I skimmed Ch. 4 and 5 in "Handbook of X-ray Astronomy" and read some of the sections in each of those chapters in more details.
-	* It sounds like xspec is the commonly used NASA software, all of their models are defined here: https://heasarc.gsfc.nasa.gov/xanadu/xspec/manual/Models.html
-	* The spectral models can have multiple components that are either added or multiplied together. 
-	* Integrating under the spectral models in counts/s/cm^2/energy vs. energy space gives an energy/s/cm^2 (or erg/s/cm^2), this is why we need to assume the spectral model of the source!
-	* These spectral models are only accounting for unabsorbed flux, just like at other wavelengths there can be flux absorbed by Hydrogen between us and the source. For example, Aprajita reports both an unabsorbed and absorbed flux in her paper on ASASSN-15oi. This "absorbed flux" can be treated like we treat optical extinction at UVOIR wavelengths.
-
-### Completed
-* Digging into OTTER DB security seems to be in a good state now!
-
-### Notes for the future
-* Sent this message to Kate and Sebastian summarizing my thoughts
-
-Okay I've done a lot of digging into x-ray models and rereading Aprajita's paper on ASASSN-15oi and Evan Ridley's paper on AT2017bcc and reading parts of a book on X-ray astronomy because I realized I just had a fundamental lack of understanding about how the data is taken and reduced. Both of these papers use a multicomponent powerlaw and blackbody spectral fit.
-I think the biggest thing I've learned is that since these x-ray models can have multiple components there can literally be infinite possibilities for the model used. This means that I don't think that there is necessarily any way for us to standardize between models without re-reducing the data completely from scratch. Since this is the case, I don't think we need too much standardization in the xray_model keyword, instead we just need details present so astronomers who care about the nitty gritty details can go back and dig up the details. I think this means that we should define the xray_model keyword as follows:
-photometry : {
-	  [
-		obs_type: xray,
-		raw: [...],
-		raw_err: [...],
-		raw_unit: "ct/s"
-		err_details: [...],
-        date: [...],
-		value: [...],
-		value_err: [...],
-		value_unit: "erg/s/cm^2",
-		xray_model: [
-			{
-				model_name: "", # preferably the xspec model name
-				param_names: [],
-				param_values: [],
-                param_value_upper_err: [],
-                param_value_lower_err: [],
-				param_descriptions: [],
-				model_url: "" # An optional model url 
-			}, ...
-		]
-		
-	  ]
-  } 
-Where there is one xray_model per date/observation time since these models can be time dependent. The model name is completely arbitrary, in Aprajita's case it could be something like "pow+blackbody" whereas in the case of Evans it could be "powerlaw+bb". It is essentially just there to give people an initial hint at the type of model. The param_*  keywords will differ depending on the model but will always be the same length as eachother. In the case of a powerlaw + blackbody model the param_names would be something like [Gamma_X, F_PL, kT_BB, F_BB, R_BB] , using the parameter names from Aprajita's paper. If instead a paper only uses a power law model, the param_names would be [Gamma_X, F]. Because of the param_descriptions keyword, these could be different depending on the paper. I've made the error upper and lower limits since it seems like these fits are almost always Bayesian. Finally, the model_url  should either be a doi link or a url to e.g. the xspec docs on the model (or whatever other software).
-Okay sorry this was a massive message but it kinda sums up my thoughts. I know we have been trying to avoid this type of parameter where it's extremely flexible and arbitrary but it's the best solution I've come up with to provide the necessary information about the essentially infinitely possible xray models. This definitely will not be easy to programmatically apply to data but will at least provide necessary information to people who query OTTER.
-Thoughts on all of this? I wanted to get opinions and try to solidify something before taking the time to start using this schema.
-
-### Any Leftover notes from yesterday
-* 
-# December 19, 2024 Research Log
-### General Notes
-* Started digging into how to actually format the X-ray data for OTTER
-  * Organized Aprajita's X-ray data into the new schema that includes an xray_model keyword
-  * Sent an email to Raf checking in about if this is a good schema plan to use
-* Modelled the ECLE radio data as a single power law since all of them are decaying anyways.
-  * All of them have a p consistent with 2-4 which is promising!
-  * I think this means that the B5 synchrotron model from 5/2 to a break at (1-p)/2 is valid.
-
-### Completed
-* 
-
-### Notes for the future
-* 
-
-### Any Leftover notes from yesterday
-* 
-# December 20, 2024 Research Log
-### General Notes
-* Talked to Collin about following up the newly identified TDE 2020ukj with VLA
-  * I checked VLASS and found 
-  e1 (pre-disruption): max w/in aperture = 0.402 ; RMS = 0.128
-  e2 (post-disruption, dt~13d): max w/in aperture = 0.299 ; RMS = 0.131
-  e3 (long post-disruption): max w/in aperture = 0.263 ; RMS = 0.109
-  * The e1 data point is an upperlimit even though the RMS is slightly under the max w/in aperture * 1/3, this is because there is some weird reduction artifact in the image. 
-  * We might write a DDT on this
-* Found all the ZTF public data for ECLEs 
-  * Trying to also query ATLAS but it is not working so great, just keeps hanging
-  * Also need to scrape papers for their data if it is public
-
-
-
-
-
-### Completed
-* 
-
-### Notes for the future
-* 
 
 ### Any Leftover notes from yesterday
 * 
