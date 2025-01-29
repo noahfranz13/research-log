@@ -1,3 +1,149 @@
+# January 06, 2025 Research Log
+### General Notes
+* Back to working on research after the holiday!
+* First thing this morning I merged a PR from Jacob on the astro education notebooks where he pickled the isochrone data to save some space and time
+* I've been working on OTTER stuff since
+  * Added the xray_model keyword to the Masterson+24 X-ray dataset
+  * Fixed the TNS pipeline for OTTER now since stuff was crashing since they upgraded the API
+  * Fixed some bugs with the website not displaying data
+  * Make the tables on the website auto sorted by discovery date (and properly sort by discovery date)
+  * Pinged the people at SciServer to see if they have any updates
+  
+### Completed
+* Incorporated the new xray model schema into the OTTER pipeline!
+
+### Notes for the future
+* 
+
+### Any Leftover notes from yesterday
+* 
+# January 07, 2025 Research Log
+### General Notes
+* Reformatted the AT2017bcc data from Ridley+2023
+  * This took a while because of silly little things that I forgot I needed to worry about over the holiday. Hopefully this will save me time when working with Aprajita's and Muryel's datasets
+	* Always make sure I re-upload to the Arango database after running the pipeline! This is purposefully not done automatically...
+	* Make sure all X-ray filters have a minimum and maximum wavelength stored in the filter_alias keyword
+* Met with Ed and Jacob to solidify a plan and goals for the semester for the astro education independent study
+
+### Completed
+* 
+
+### Notes for the future
+* 
+
+### Any Leftover notes from yesterday
+* 
+# January 29, 2025 Research Log
+### General Notes
+* Finished VLA proposal
+* Big Boom notes (Gokul Srinivasaragavan; University of Maryland)
+  * Relativistic Stellar explosions: LGRBs & CCSNe
+  * LGRBs originate from compact object remnants leftover from CCSNe --> GRB-SN connection
+  * Gamma-rays only last ~seconds!!
+  * Afterglow lasts a while as the shock propagates through the CSM/ISM
+  * LGRBs are generally associated SN Ic-BL, BUT not all SN Ic-BL have a LGRB
+  * Really there is a continuum of relativistic transients
+  * Studying the sub-relativistic SN
+	* Optical emission probes the SN explosion and the radio emission probes the shock interaction with the CSM. No correlations between the optical and radio emission from Type Ic-BL SNe
+  * Studying the relativistic GRBs, is there a correlation or relationship with SN?
+	* GRB-SN are dominated in the optical by the GRB afterglow and then at later times (~10 days after explosion) the light curve flattens because the supernova emission becomes dominant
+	* In GRB221009a, they searched for an optical counterpart due to a SN, not necessarily the afterglow. They find that if there is a SN present from this GRB, it must be very faint. A bayesian analysis shows that a SN model is _slightly_ favored over a no-SN model
+	* SN emission appears to be decoupled from the GRB emission in these systems. Essentially this means that the SN engine does not actually have an impact on the GRB jet that we observe
+  * Future questions:
+	* What are the progenitors of LFBOTs?
+	* What are causing Orphan Afterglows? Off-axis GRB? Why don't we see them more?
+  Next generation of missions:
+	* LSST will be able to find GRB afterglows to higher and higher redshifts
+	* Einstein Probe and SVOM will find more X-ray flash events
+
+### Completed
+* 
+
+### Notes for the future
+* 
+
+### Any Leftover notes from yesterday
+* 
+# November 14, 2024 Research Log
+### General Notes
+* SAGUARO Meeting went well
+  * We are doing a TROVE hack session tomorrow
+  * MPC checker might be timing out, but I don't think so? I think it's something weird with dramatiq
+* Worked on Galaxies HW 4 this morning mostly, it's so long :(((
+* Grad admissions meeting with Nathan and other grad students to give feedback
+* Met with Sebastian
+  * He supports modeling everything in OTTER with mosfit eventually
+  * I sent him the paper draft
+  * He will try to install OTTER locally for development and reach out if he has questions
+  * He will email Raffaella Margutti about meeting about x-ray stuff
+* Started a rerun of mosfit on sdu and zso for Collin, here's the command I used for future reference
+```
+mpirun -np 3 mosfit -e mosfit_input/*.json -c -o mosfit_output -m tde --local-data-only --run-until-converged -N 120
+```
+which runs it on all of the json files in the `mosfit_input` directory, writes both chains and output parameters to `mosfit_output`, runs emcee until converged, and with 120 walkers. 
+
+### Completed
+* 
+
+### Notes for the future
+* 
+
+### Any Leftover notes from yesterday
+* 
+# November 18, 2024 Research Log
+### General Notes
+* Been working on my galaxies hw
+  * Dave said in class to reuse the isochrones from an earlier homework for the problem 1 cuts
+* Meeting with Tanmoy
+  * He corrected some of my misnomers about radio emission from ECLEs
+  * I need to reread some of the ECLE papers to get a better idea of why they are *Extreme* and not just coronal lines
+  * I should reach out to the Co-I's on Kate's original proposal and see if they can send it so I can get a better idea of a science question
+  * I should look at the x-rays from these events  (if there are any)
+
+### Completed
+* 
+
+### Notes for the future
+* 
+
+### Any Leftover notes from yesterday
+* 
+# November 19, 2024 Research Log
+### General Notes
+* On last part of galaxies homework
+  * This part took forever but it's basically done, I just gotta answer the questions
+* Met with Ed and Jacob about education stuff
+  * Thursday we are having a mini hackathon to get some stuff started!
+* Notes from OTTER meeting with Raf
+  * Flux calibration is messy in X-ray
+  * Different papers using the same data but arriving at different fluxes
+  * Necessary parameters: time of observation, normalization for blackbody, normalization for power law, energy range of the fits, 
+  * XMM has 3 telescopes on board, 
+  * ASASSN-15oi (Aprajita's paper) is a good example of how bad the processing can be
+	* Extensive x-ray data (XRT and XMM)
+	* Both BB and powerlaw
+	* Table A.2 has all the parameters needed to be recorded
+  * Be very clear about if it is absorption corrected (could be time dependent), just like optical extinction correction
+	* Can have multiple absorption corrections for each model parameter, in addition to being time-dependent
+  * The energy band is very important!
+  * Instrumental corrections are usually taken as given
+	* Count rate already has the instrumental corrections
+  * Use 1 keV when converting from count rate to F_nu. Unless converting for an SED use the integrated flux across the entire band
+  * CANNOT go from flux back to a count rate, ever!
+  * Although there is usually a single factor between flux and count rate
+  * Watch out for 90% error bars! Instead of 1 sigma! 
+  * Muryel's paper is a good standard to start with
+* Started reading Corinna's GRB paper, it is very interesting so far!
+* Started looking more into the Astrobites application process and brainstorming an outline
+
+### Completed
+* 
+
+### Notes for the future
+* Work on the astrobites statements!
+
+### Any Leftover notes from yesterday
+* 
 # November 20, 2024 Research Log
 ### General Notes
 * Been reading Corinna's GRB 220101A paper
@@ -337,69 +483,6 @@ Thoughts on all of this? I wanted to get opinions and try to solidify something 
 
 ### Any Leftover notes from yesterday
 * 
-# January 07, 2025 Research Log
-### General Notes
-* Reformatted the AT2017bcc data from Ridley+2023
-  * This took a while because of silly little things that I forgot I needed to worry about over the holiday. Hopefully this will save me time when working with Aprajita's and Muryel's datasets
-	* Always make sure I re-upload to the Arango database after running the pipeline! This is purposefully not done automatically...
-	* Make sure all X-ray filters have a minimum and maximum wavelength stored in the filter_alias keyword
-* Met with Ed and Jacob to solidify a plan and goals for the semester for the astro education independent study
-
-### Completed
-* 
-
-### Notes for the future
-* 
-
-### Any Leftover notes from yesterday
-* 
-# August 26, 2024 Research Log
-### General Notes
-* Sent GRFP stuff to Tanmoy
-
-### Completed
-* Mostly just caught up on emails.
-* Emailed Sebastian about his Table 1 in his paper
-* Did the employment training
-
-### Notes for the future
-* 
-# August 27, 2024 Research Log
-### General Notes
-* I didn't have class today so I got to work on research all day!
-* I updated the `otterdb` repo so that it works with arangodb again
-* Updated the OTTER API to work with the arangodb backend
-* Found A LOT of mistakes in the dataset while working to get it into the website format
-
-### Completed
-* Reintegrating the dataset with arangodb (using docker so no one needs to install arangodb either!!)
-* Updated the OTTER API to work with the arangodb backend
-* Got nicegui app up and running with the arangodb backend
-
-### Notes for the future
-* Need to merge the branch I was working on for web-otter
-* Need to message Nick and tell him what updates I made to his code to integrate better with what I had already done
-# September 10, 2024 Research Log
-### General Notes
-* I haven't done this in a while, oops! I am still trying to build the habit...
-* Over the past ~week I did a lot on the web otter front end website including
-adding a search page and prettying up the home page with a sky plot.
-* Today I added a classification search mechanism to the search page
-
-### Completed
-* Classification search mechanism on otter-web frontend
-* Opened PRs for the minor planet checking in the SAGUARO vetting code
-
-### Notes for the future
-* Currently the classification search mechanism will grab anything with a
-so-called confidence > 0. This is because we haven't defined the confidence
-value in detail yet. Once we do, we should add a slider to this search page that
-allows others to select the confidence threshold they want!
-* Notes from the SAGUARO MP checker
-  * Do we really want the MP checker to automatically run when we click the vet button?
-  This seems to add a lot of time waiting.
-  * How should the results of the MP checker appear on the website for the target? Right
-  now I have it changing the classification to "Minor Planet / Asteroid".
 # October 02, 2024 Research Log
 ### General Notes
 * ECLE Stuff
@@ -952,83 +1035,50 @@ Each bullet will be labelled by speakers name, then notes underneath that.
 
 ### Any Leftover notes from yesterday
 * 
-# November 14, 2024 Research Log
+# August 26, 2024 Research Log
 ### General Notes
-* SAGUARO Meeting went well
-  * We are doing a TROVE hack session tomorrow
-  * MPC checker might be timing out, but I don't think so? I think it's something weird with dramatiq
-* Worked on Galaxies HW 4 this morning mostly, it's so long :(((
-* Grad admissions meeting with Nathan and other grad students to give feedback
-* Met with Sebastian
-  * He supports modeling everything in OTTER with mosfit eventually
-  * I sent him the paper draft
-  * He will try to install OTTER locally for development and reach out if he has questions
-  * He will email Raffaella Margutti about meeting about x-ray stuff
-* Started a rerun of mosfit on sdu and zso for Collin, here's the command I used for future reference
-```
-mpirun -np 3 mosfit -e mosfit_input/*.json -c -o mosfit_output -m tde --local-data-only --run-until-converged -N 120
-```
-which runs it on all of the json files in the `mosfit_input` directory, writes both chains and output parameters to `mosfit_output`, runs emcee until converged, and with 120 walkers. 
+* Sent GRFP stuff to Tanmoy
 
 ### Completed
-* 
+* Mostly just caught up on emails.
+* Emailed Sebastian about his Table 1 in his paper
+* Did the employment training
 
 ### Notes for the future
 * 
-
-### Any Leftover notes from yesterday
-* 
-# November 18, 2024 Research Log
+# August 27, 2024 Research Log
 ### General Notes
-* Been working on my galaxies hw
-  * Dave said in class to reuse the isochrones from an earlier homework for the problem 1 cuts
-* Meeting with Tanmoy
-  * He corrected some of my misnomers about radio emission from ECLEs
-  * I need to reread some of the ECLE papers to get a better idea of why they are *Extreme* and not just coronal lines
-  * I should reach out to the Co-I's on Kate's original proposal and see if they can send it so I can get a better idea of a science question
-  * I should look at the x-rays from these events  (if there are any)
+* I didn't have class today so I got to work on research all day!
+* I updated the `otterdb` repo so that it works with arangodb again
+* Updated the OTTER API to work with the arangodb backend
+* Found A LOT of mistakes in the dataset while working to get it into the website format
 
 ### Completed
-* 
+* Reintegrating the dataset with arangodb (using docker so no one needs to install arangodb either!!)
+* Updated the OTTER API to work with the arangodb backend
+* Got nicegui app up and running with the arangodb backend
 
 ### Notes for the future
-* 
-
-### Any Leftover notes from yesterday
-* 
-# November 19, 2024 Research Log
+* Need to merge the branch I was working on for web-otter
+* Need to message Nick and tell him what updates I made to his code to integrate better with what I had already done
+# September 10, 2024 Research Log
 ### General Notes
-* On last part of galaxies homework
-  * This part took forever but it's basically done, I just gotta answer the questions
-* Met with Ed and Jacob about education stuff
-  * Thursday we are having a mini hackathon to get some stuff started!
-* Notes from OTTER meeting with Raf
-  * Flux calibration is messy in X-ray
-  * Different papers using the same data but arriving at different fluxes
-  * Necessary parameters: time of observation, normalization for blackbody, normalization for power law, energy range of the fits, 
-  * XMM has 3 telescopes on board, 
-  * ASASSN-15oi (Aprajita's paper) is a good example of how bad the processing can be
-	* Extensive x-ray data (XRT and XMM)
-	* Both BB and powerlaw
-	* Table A.2 has all the parameters needed to be recorded
-  * Be very clear about if it is absorption corrected (could be time dependent), just like optical extinction correction
-	* Can have multiple absorption corrections for each model parameter, in addition to being time-dependent
-  * The energy band is very important!
-  * Instrumental corrections are usually taken as given
-	* Count rate already has the instrumental corrections
-  * Use 1 keV when converting from count rate to F_nu. Unless converting for an SED use the integrated flux across the entire band
-  * CANNOT go from flux back to a count rate, ever!
-  * Although there is usually a single factor between flux and count rate
-  * Watch out for 90% error bars! Instead of 1 sigma! 
-  * Muryel's paper is a good standard to start with
-* Started reading Corinna's GRB paper, it is very interesting so far!
-* Started looking more into the Astrobites application process and brainstorming an outline
+* I haven't done this in a while, oops! I am still trying to build the habit...
+* Over the past ~week I did a lot on the web otter front end website including
+adding a search page and prettying up the home page with a sky plot.
+* Today I added a classification search mechanism to the search page
 
 ### Completed
-* 
+* Classification search mechanism on otter-web frontend
+* Opened PRs for the minor planet checking in the SAGUARO vetting code
 
 ### Notes for the future
-* Work on the astrobites statements!
-
-### Any Leftover notes from yesterday
-* 
+* Currently the classification search mechanism will grab anything with a
+so-called confidence > 0. This is because we haven't defined the confidence
+value in detail yet. Once we do, we should add a slider to this search page that
+allows others to select the confidence threshold they want!
+* Notes from the SAGUARO MP checker
+  * Do we really want the MP checker to automatically run when we click the vet button?
+  This seems to add a lot of time waiting.
+  * How should the results of the MP checker appear on the website for the target? Right
+  now I have it changing the classification to "Minor Planet / Asteroid".
